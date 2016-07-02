@@ -29,9 +29,9 @@ If you prefer, you can include this framework in your project using our official
 Navigate to the `dist/` folder in this repository, and you will see the `test.html` file, which has the CSS include statements, in the `head` section and the JS includes just before `body` section closes.
 You need to copy the `dist/` folder to the root of your project, ensuring that all the files in your project can access the files through the relative URL, supplied in the CSS and the JS includes.
 
-#### material-wfont.css or material.css?
+#### material-fullpalette.css or material.css?
 
-The only difference is that `material-wfont.css` has the Google web fonts included.
+The only difference is that `material-fullpalette.css` has the full colors palette available, the other one has just the primary colors.
 
 #### Use custom color as primary
 
@@ -39,7 +39,7 @@ Is often asked how to change the primary color of this theme without edit the bo
 
 You can do it by creating a less file in your project:
 
-    @import "../bower_components/bootstrap-material-design/less/material-wfont.less";
+    @import "../bower_components/bootstrap-material-design/less/material.less";
 
     // Override @primary color with one took from _colors.less
     @primary: @deep-purple;
@@ -85,11 +85,13 @@ They can be used by adding the class suffix `-material-color` to the desired ele
 
 Example:
 
-    <button class="btn btn-material-deeppurple">Deep purple button</button>
+    <button class="btn btn-material-deep-purple">Deep purple button</button>
 
 These colors are taken from the Material Design color palette and are reported below:
 
 ![palette](demo/imgs/palette.jpg)
+
+To take advantage of all the shades please use `material-fullpalette.css`, be aware of its huge size.
 
 ### Buttons
 
@@ -122,6 +124,50 @@ Variations are available for every icon, including the original Bootstrap icons.
 The syntax to add a Material icon is:
 
      <i class="icon icon-material-favorite"></i>
+
+### Cards 
+
+A card will expand to fill all of the available width (e.g. column's width). Card's height will be automatically resized to match width.
+
+Here is an example on how to use it:
+
+    <div class="card">
+
+        <div class="card-height-indicator"></div>
+
+        <div class="card-content">
+
+            <div class="card-image">
+                <img src="./image.jpg" alt="Loading image...">
+                <h3 class="card-image-headline">Lorem Ipsum Dolor</h3>
+            </div>
+
+            <div class="card-body">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+
+            <footer class="card-footer">
+                <button class="btn btn-flat">Share</button>
+                <button class="btn btn-flat btn-warning">Learn More</button>
+            </footer>
+
+        </div>
+
+    </div>
+Cards will adapt to column's width. The card below will have width equal to col-lg-6:
+
+    <div class="row">
+        <div class="col-lg-3"></div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                ...
+            </div>
+        </div>
+
+        <div class="col-lg-3"></div>
+    </div>
+
 
 ## Material.js
 
@@ -185,6 +231,11 @@ Read more about [Dropdown.js here](https://github.com/FezVrasta/dropdown.js).
 
 Transform select and multi-select inputs into advanced text inputs. Material Design for BS provides a full replacement of the plugin's CSS, so don't include it.
 Read more about [selectize.js](http://brianreavis.github.io/selectize.js/).
+
+### Bootstrap Material Datepicker
+
+A Material Design datepicker created to be used with Material Design for Bootstrap.  
+Read more about [Bootstrap Material Datepicker](https://github.com/T00rk/bootstrap-material-datepicker)
 
 ## Compatibility
 
